@@ -3,23 +3,31 @@ import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import loadable from 'react-loadable';
-import Loader from './Loader';
-import * as campaignerActions from '../actions/campaigner';
+import Loader from '../Presentational/Loader';
+import Error from '../Presentational/Error';
+import * as campaignerActions from '../../actions/campaigner';
 
 const LoadingComponent = () => <Loader loading="true" />;
 
 // home component
 const AsyncHomeComponent = loadable({
-  loader: () => import('./Home'),
+  loader: () => import('../Container/Home'),
   loading: LoadingComponent
 });
 
-const Layout = props => {
+
+// Error component
+const AsyncErrorComponent = loadable({
+  loader: () => import('../Presentational/Error'),
+  loading: LoadingComponent
+});
+
+const Routes = props => {
   return (
     <main>
       <Switch>
         <Route path="/" component={AsyncHomeComponent} exact />
-        <Route component={AsyncHomeComponent} />
+        <Route component={AsyncErrorComponent} />
       </Switch>
     </main>
   );
@@ -34,5 +42,5 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(Layout)
+  )(Routes)
 );

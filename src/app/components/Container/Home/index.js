@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import uuid4 from 'uuid4';
-import * as campaignerActions from '../actions/campaigner';
-import '../assets/styles/home.scss';
+import * as campaignerActions from '../../../actions/campaigner';
+import '../../../assets/styles/home.scss';
 
-class Home extends React.Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
