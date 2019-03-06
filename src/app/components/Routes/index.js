@@ -1,10 +1,9 @@
 import React from 'react';
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import loadable from 'react-loadable';
 import Loader from '../Presentational/Loader';
-import Error from '../Presentational/Error';
 import * as campaignerActions from '../../actions/campaigner';
 
 const LoadingComponent = () => <Loader loading="true" />;
