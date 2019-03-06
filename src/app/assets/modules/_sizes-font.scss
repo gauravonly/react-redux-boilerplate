@@ -1,0 +1,55 @@
+// Reset the global font size to the given value.
+// Helpful if the font size should change at different responsive breakpoints.
+//
+// @param integer new global font size in px
+// @return string new font size var and stylesheet for body
+@mixin refont($px) {
+  $font-size-body-px: $px;
+  $font-size-body: $font-size-body-px / 16 * 100%;
+  body { font-size: $font-size-body; }
+}
+
+// Calculates em so it could be used everywhere.
+//
+// @param integer (font) size in pixel
+// @param integer reference font-size in pixel
+// @return string em
+@function em($px: $line-height-px, $font-size: $font-size-body-px) {
+  @return $px / $font-size * 1em;
+}
+
+// Calculates rem so it could be used everywhere.
+//
+// @param integer font size in pixel
+// @param integer reference size (for rem always font-size of body) in pixel
+// @return string rem
+@function rem($px: $line-height-px, $font-size: $font-size-body-px) {
+  @return $px / $font-size * 1rem;
+}
+
+// Calculates percent so it could be used everywhere.
+//
+// @param integer size in pixel
+// @param integer reference size in pixel
+// @return string em
+@function pc($px: $line-height-px, $standard: $font-size-body-px) {
+  @return $px / $standard * 100%;
+}
+
+// Creates the font size in %
+//
+// @param integer font size in px
+// @param integer font-size of parent element in px (if empty than it's the global font size)
+// @return string css font-size with calculated % value
+@mixin font-size($px, $standard: $font-size-body-px) {
+  font-size: pc($px,$standard);
+}
+
+// Creates the line height in em
+//
+// @param integer font size in pixel
+// @param integer line-height in pixel
+// @return string line height
+@mixin line-height($line-height: $line-height-px, $font-size: $font-size-body-px) {
+  line-height: em($line-height, $font-size);
+}

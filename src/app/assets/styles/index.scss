@@ -1,0 +1,58 @@
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Normal Font', -apple-system, BlinkMacSystemFont, 'Open Sans',
+    Arial, sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+*[hidden] {
+  display: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  html {
+    font-size: 14px;
+    display: block;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 480px) {
+  html {
+    font-size: 15px;
+    display: block;
+  }
+}
+
+@media only screen and (min-device-width: 481px) {
+  html {
+    width: 100%;
+  }
+  body {
+    min-width: 320px;
+    max-width: 480px;
+  }
+}
+
+@font-face {
+  font-family: 'Normal Font';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto; /* or block, swap, fallback, optional */
+  src: local('Normal Font'),
+    url('../fonts/Roboto-Regular.ttf') format('truetype'); /* will be preloaded */
+}
+
+@font-face {
+  font-family: 'Bold Font';
+  font-style: normal;
+  font-display: auto; /* or block, swap, fallback, optional */
+  src: local('Bold Font'), url('../fonts/Roboto-Bold.ttf') format('truetype'); /* will be preloaded */
+}

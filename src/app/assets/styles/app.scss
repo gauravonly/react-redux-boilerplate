@@ -1,0 +1,16 @@
+@import "../modules/flex";
+.app-container {
+  @include flex-set;
+  @include flex--content-start;
+  @include flex--align-content-center;
+  @include flex--column;
+  background: #ffffff;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  max-width: 1024px;
+}
+
+* {
+  box-sizing: border-box;
+}

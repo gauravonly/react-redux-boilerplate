@@ -1,0 +1,93 @@
+@import "../modules/flex";
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  @include flex-set;
+  @include flex--content-center;
+  @include flex--align-items-center;
+  background: rgba(1, 1, 1, 0.4);
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  .loader-main {
+    width: 90%;
+    height: 40vh;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  .loader-heading {
+    width: 60%;
+    height: 10vh;
+    border-radius: 5px;
+  }
+  .loader-content-container {
+    @include flex-set;
+    @include flex--align-items-center;
+    @include flex--column;
+    width: 80%;
+    margin: 5px;
+    .loader-content {
+      width: 60%;
+      height: 5vh;
+      margin: 5px;
+      border-radius: 5px;
+    }
+  }
+  .loader-button {
+    position: absolute;
+    bottom: 0px;
+    height: 50px;
+    width: 90%;
+    border-radius: 5px;
+  }
+  .shine {
+    background: #f6f7f8;
+    background-image: linear-gradient(
+      to right,
+      #f6f7f8 0%,
+      #edeef1 20%,
+      #f6f7f8 40%,
+      #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 800px 804px;
+    display: inline-block;
+    position: relative;
+
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: placeholderShimmer;
+    -webkit-animation-timing-function: linear;
+  }
+
+  @-webkit-keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  @-moz-keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
+}

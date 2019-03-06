@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,width=device-width, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="description" content="A campaigner" />
+    <title>Campaigner</title>
+    <link
+      rel="shortcut icon"
+      href=""
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="campaigner PWA" />
+    <link rel="apple-touch-icon" href="" />
+    <meta name="msapplication-TileImage" content="" />
+    <meta name="msapplication-TileColor" content="#576EFC" />
+    <meta name="theme-color" content="#576EFC" />
+    <script
+      async
+      src="https://cdn.applozic.com/applozic/applozic.chat-5.2.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/service-worker.js')
+            .then(registration => {
+              // NOTE: Below log line is kept to track Serviceworker Registration
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              // NOTE: Below log line is kept to track Serviceworker Registration
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

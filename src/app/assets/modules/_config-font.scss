@@ -1,0 +1,14 @@
+/* font size & line height in px */
+$font-size-body-px: 14;
+$line-height-px: 21;
+
+/* calculate font-size (in %) and line-height (in em) */
+$font-size-body: pc($font-size-body-px, 16);
+$line-height: em($line-height-px, $font-size-body-px);
+
+@mixin font-normal {
+  font-family: 'Normal Font';
+}
+@mixin font-bold {
+  font-family: 'Bold Font';
+}
