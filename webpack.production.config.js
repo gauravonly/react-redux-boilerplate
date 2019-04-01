@@ -17,7 +17,7 @@ module.exports = (env = 'development', argv) => {
 
   if (env && env === 'production') {
     processEnvConfig = {
-      NODE_ENV: JSON.stringify(env),
+      NODE_ENV: JSON.stringify(env)
     };
   } else if (env && env === 'staging') {
     processEnvConfig = {
@@ -26,7 +26,7 @@ module.exports = (env = 'development', argv) => {
     };
   } else {
     processEnvConfig = {
-      NODE_ENV: JSON.stringify(env),
+      NODE_ENV: JSON.stringify(env)
     };
   }
 
@@ -43,7 +43,7 @@ module.exports = (env = 'development', argv) => {
       children: false
     },
     entry: {
-      index: './src/app/client.js'
+      main: './src/app/client.js'
     },
     output: {
       publicPath: '/',
